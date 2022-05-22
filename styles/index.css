@@ -1,0 +1,36 @@
+body{
+    background-color: rgb(132, 132, 230);
+}
+#movies{
+    /* border: 1px solid red; */
+    width: 70%;
+    /* height: 400px; */
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(auto,200px);
+      gap: 5px;
+}
+#movies>div{
+border-radius: 10px;
+line-height: 15px;
+    
+box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    background-color: rgb(197, 188, 188);
+    
+}
+#movies>div>img:hover{
+    /* width: %; */
+    height: 70%;
+}
+#movies>div:hover{
+    width: 100%;
+    height: 100%;
+}
+#movies>div>h2,p{
+    margin: 5px;
+}
+#movies>div>img{
+    border-radius: 10px;
+    width: 100%;
+}

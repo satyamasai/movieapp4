@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+</head>
+<body>
+    <form onsubmit="Movies()" action="" id="form">
+          <input id="name" type="text" placeholder="enter movie name">
+          <input id="date" type="text" placeholder="release date">
+          <input id="poster" type="text" placeholder="enter poster URL">
+          <input id="imdb" type="tex" placeholder="IMDb rating">
+          <input type="submit">
+    </form>
+    
+</body>
+</html>
+<script>
+    function Movies(){
+        event.preventDefault()
+        console.log("checked");
+        var form=document.getElementById("form")
+        var movie_name=form.name.value
+        var releasing_date=form.date.value
+        var poster=form.poster.value
+        var imdb=form.imdb.value
+        var moviesarr= JSON.parse(localStorage.getItem("movies")) || [];
+       var movie_obj={
+           movie_name: movie_name,
+           releasing_date:releasing_date,
+           poster:poster,
+           imdb:imdb,
+
+       }
+       moviesarr.push(movie_obj)
+       //console.log(moviesarr)
+       if(moviesarr!=null){
+        localStorage.setItem("movies", JSON.stringify(moviesarr))
+        form.name.value=null;
+        form.date.value=null;
+        form.poster.value=null;
+        form.imdb.value=null;
+       }
+      
+
+
+    }
+
+</script>
